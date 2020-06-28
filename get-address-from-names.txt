@@ -1,0 +1,8 @@
+#!/bin/bash
+cat $1 | while read -r name; do
+	if [[ $name = \#* ]]; then
+		echo "$name"
+	else
+		dig +short $name AAAA
+	fi
+done
